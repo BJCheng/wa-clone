@@ -11,6 +11,10 @@
     "lint": "eslint",
     "postinstall": "npm run build"
   },
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BJCheng/wa-clone.git"
