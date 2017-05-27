@@ -1,0 +1,34 @@
+{
+  "name": "wa-clone",
+  "version": "1.0.0",
+  "description": "Whatsapp cloned by BJ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -Rf dist && babel src -d dist",
+    "babel-node": "babel-node",
+    "nodemon": "nodemon --exec npm run babel-node",
+    "lint": "eslint",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BJCheng/wa-clone.git"
+  },
+  "author": "Ben Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BJCheng/wa-clone/issues"
+  },
+  "homepage": "https://github.com/BJCheng/wa-clone#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "nodemon": "^1.11.0"
+  }
+}
