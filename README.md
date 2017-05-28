@@ -1,4 +1,4 @@
-<ul>
+<ol>
 <li>1: add babel</li>
 <li>2: learn how -dev different is and call the command from /node_modules/.bin</li>
 <li>3: add babel-node</li>
@@ -8,4 +8,4 @@
 <li>7: setup redis client</li>
 <li>8: test the redis server with incr</li>
 <li>9: add heroku rediscloud addons</li>
-</ul>
+</ol>
