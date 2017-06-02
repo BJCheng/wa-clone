@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -Rf dist && babel src -d dist",
+    "build-api": "rm -Rf dist/api && babel src/api -d dist/api",
     "babel-node": "babel-node",
     "nodemon": "nodemon --exec npm run babel-node",
     "lint": "eslint",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build-api"
   },
   "engines": {
     "node": "6.10.3",
