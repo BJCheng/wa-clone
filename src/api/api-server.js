@@ -1,5 +1,5 @@
 import express from 'express';
-import {setupRedis, redisClient} from '../redis-client';
+import {setupRedis, redisClient} from './redis-client';
 
 const app = express();
 const port = process.env.PORT || 4000;
