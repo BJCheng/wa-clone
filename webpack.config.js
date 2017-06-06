@@ -1,6 +1,6 @@
 'use strict';
 
-var path = require('path');
+const path = require('path');
 
 module.exports = {
 	target: 'web',
@@ -20,7 +20,10 @@ module.exports = {
 			{
 				test: /src(\/|\\).*\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel'
+				loader: 'babel-loader',
+				query: {
+					presets: ['es2015','react']
+				}
 			}
 		]
 	},

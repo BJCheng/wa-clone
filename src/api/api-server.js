@@ -1,8 +1,11 @@
 import express from 'express';
 import {setupRedis, redisClient} from './redis-client';
+import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 4000;
+
+app.use(cors());
 
 setupRedis();
 
@@ -17,6 +20,19 @@ app.get('/redis-test', (req, res)=>{
 			res.send(err);
 		} else{
 			res.send(`New incremented value is : ${result}`);
+		}
+	});
+});
+
+app.get('/json-test', (req, res)=>{
+	redisClient.incr('json-test', (err, result)=>{
+		if(err){
+			console.error(err);
+			res.send(err);
+		} else{
+			res.json({
+				incResult: result
+			});
 		}
 	});
 });
