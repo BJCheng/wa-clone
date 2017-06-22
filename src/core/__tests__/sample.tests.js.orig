@@ -1,0 +1,10 @@
+describe('Sample Test', () => {
+
+    it('pass', () => {
+<<<<<<< HEAD
+    	assert.equal(true, true);
+=======
+    	assert.equal(1, 2);
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+    });
+});

@@ -1,9 +1,12 @@
 import React from 'react';
 import ProfileEditor from './profile-editor.react';
-import SubmitButton from './submit-button.react';
+import SubmitButton from '../common/submit-button.react';
 import $ from 'jquery';
 import urlJoin from 'url-join';
-import {requestStates} from '../../core/request-states';
+import { requestStates } from '../../../core/request-states';
+import {LocalCache} from '../../utils/local-cache';
+import {LocalCacheKeys} from '../../utils/local-cache-keys';
+import {DefaultActions} from '../../flux/default/default-actions.js';
 
 class SetupProfile extends React.Component {
     constructor(props) {
@@ -42,11 +45,11 @@ class SetupProfile extends React.Component {
                             handle={this.state.handle}
                             name={this.state.name}
                             onHandleChange={this._handleHandleChange}
-                            onNameChange={this._handleNameChange}/>
+                            onNameChange={this._handleNameChange} />
                         <SubmitButton
-                            text={isFetching ? 'Submitting...' : 'Submit' }
+                            text={isFetching ? 'Submitting...' : 'Submit'}
                             enabled={!isFetching}
-                            onSubmit={this._submitProfile}/>
+                            onSubmit={this._submitProfile} />
                     </div>
                 );
 
@@ -78,7 +81,8 @@ class SetupProfile extends React.Component {
         });
     }
 
-    _submitProfile() {
+    _submitProfile(e) {
+        console.log(e);
         this.setState({
             requestState: requestStates.fetching
         });
@@ -94,10 +98,15 @@ class SetupProfile extends React.Component {
                     name: this.state.name
                 }),
                 success: (res) => {
-                    localStorage.setItem('user-token', res.token);
+                    // localStorage.setItem('user-token', res.token);
+                    LocalCache.setString(LocalCacheKeys.authToken, res.token);
                     this.setState({
                         requestState: requestStates.success
                     });
+
+                    global.setTimeout(()=>{
+                        DefaultActions.goToChatsView(); 
+                    }, 1500);
                 },
                 error: () => {
                     console.log(...arguments);

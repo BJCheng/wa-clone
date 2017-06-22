@@ -1,0 +1,39 @@
+'use strict';
+
+const path = require('path');
+
+module.exports = {
+	target: 'web',
+	debug: true,
+	devtool: 'source-map',
+	context: path.join(__dirname),
+	entry: {
+		app: './src/spa/app.js'
+	},
+	output: {
+		path: path.join(__dirname, 'dist', 'spa'),
+		publicPath: '/dist/spa/',
+		filename: '[name].bundle.js'
+	},
+	module: {
+		loaders: [
+			{
+				test: /src(\/|\\).*\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+<<<<<<< HEAD
+					presets: ['es2015', 'react']
+=======
+					presets: ['es2015','react']
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+				}
+			},
+			{
+				test: /src(\/|\\).*\.scss$/,
+				loaders: ["style", "css", "sass"]
+			}
+		]
+	},
+	plugins: []
+};

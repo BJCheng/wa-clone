@@ -1,0 +1,17 @@
+import http from 'http';
+
+const port = process.env.PORT || 4000;
+
+const server = http.createServer((req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'text/plain');
+<<<<<<< HEAD
+	res.end('Hello React Class, from heroku server\n');
+=======
+	res.end('Hello React Class\n');
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+});
+
+server.listen(port, () => {
+	console.log(`Server running at port ${port}.`);
+});

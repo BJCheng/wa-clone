@@ -1,0 +1,7 @@
+{
+<<<<<<< HEAD
+    "plugins": ["transform-es2015-modules-commonjs"]
+=======
+  "plugins": ["transform-es2015-modules-commonjs"]
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+}

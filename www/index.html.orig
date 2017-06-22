@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>WhatsApp Clone</title>
+<<<<<<< HEAD
+    <script>
+        window.__apiUrl__ = 'http://localhost:4000';
+    </script>
+</head> 
+<body>
+<div>123</div>
+=======
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script>
+        window.__apiUrl__ = 'http://localhost:4000';
+    </script>
+</head>
+<body>
+
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+<div id="root"></div>
+
+<script type="text/javascript" src="/dist/spa/app.bundle.js"></script>
+</body>
+</html>

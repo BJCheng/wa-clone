@@ -1,0 +1,20 @@
+import 'babel-polyfill';
+<<<<<<< HEAD
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Increment from './increment.react.js';
+
+import './normalize.scss'; 
+
+ReactDOM.render(<Increment/>, document.getElementById('root'));
+=======
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Increment from './increment.react';
+import MainContainer from './components/main-container.react';
+import './normalize.scss';
+
+
+ReactDOM.render(<MainContainer />, document.getElementById('root'));
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57

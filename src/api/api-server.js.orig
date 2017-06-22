@@ -1,0 +1,33 @@
+import express from 'express';
+<<<<<<< HEAD
+import cors from 'cors';
+import {setupRoutes} from './routes';
+import {setupRedis} from './redis-client';
+import bodyParser from 'body-parser';
+
+const app = express();
+const port = process.env.PORT || 4000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+=======
+import {setupRedis} from './redis-client';
+import {setupRoutes} from './routes';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
+const app = express();
+app.use(cors());
+console.log('cors allowed for all routes');
+app.use(bodyParser.json());
+
+const port = process.env.PORT || 4000;
+
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+setupRedis();
+setupRoutes(app);
+
+app.listen(port, () => {
+	console.log(`Express app listening on port ${port}`);
+});

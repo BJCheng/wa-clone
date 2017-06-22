@@ -1,4 +1,4 @@
-import keyMirror from 'key-mirror'; // enum
+import keyMirror from 'key-mirror';
 
 const requestStates = keyMirror({
     default: null,

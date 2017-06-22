@@ -1,0 +1,40 @@
+import redis from 'redis';
+
+let client = null;
+
+function setup() {
+<<<<<<< HEAD
+	if (process.env.REDISCLOUD_URL) {  //==>REDISCLOUD_URL assignedn from heroku
+=======
+	if (process.env.REDISCLOUD_URL) {
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+		console.log('connecting to redis cloud');
+		client = redis.createClient(process.env.REDISCLOUD_URL);
+	}
+	else {
+<<<<<<< HEAD
+		console.log('connecting to local redis!');
+=======
+		console.log('connecting to local redis');
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
+		client = redis.createClient();
+	}
+
+	client.on('connect', function() {
+		console.log('redis client emitted connect event');
+	});
+
+	client.on('error', function (err) {
+		console.error(err, 'redis error');
+	});
+}
+
+<<<<<<< HEAD
+export {setup as setupRedis, client as redisClient};
+=======
+const redisKeys = {
+	users: 'users|0'
+};
+
+export {setup as setupRedis, client as redisClient, redisKeys}
+>>>>>>> 67df1a7f0a57b0b1c15c56a0a726bb6753aadd57
